@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="600.0" prefWidth="400.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Converter.units.angle.AngleController">
+   <content>
+      <VBox>
+         <children>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Button fx:id="backButton" layoutX="130.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #f44336#f44336;" text="Назад" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="circle">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="circleTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Окружность" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="rad">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="radianTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Радиан" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="deg">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="degreeTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Градус" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="210.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="grad">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="gradianTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Град" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="310.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="'">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="minuteTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Минута" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="510.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="''">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="secondTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Секунда" textFill="#656262" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

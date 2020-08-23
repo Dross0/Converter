@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="600.0" prefWidth="400.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Converter.Controller">
+   <content>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <AnchorPane layoutX="10.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="384.0">
+               <children>
+                  <Button fx:id="temperatureButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Температура" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="weightButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Масса" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="lengthButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Длина" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="speedButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Скорость" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="timeButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Время" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="powerButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Мощность" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="310.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="energyButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Энергия" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="370.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="dataButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Объём данных" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="squareButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Площадь" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="volumeButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Объем" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="550.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="angleButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Угловая мера" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

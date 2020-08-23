@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="600.0" prefWidth="400.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Converter.units.temperature.TemperatureController">
+   <content>
+      <VBox>
+         <children>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Button fx:id="backButton" layoutX="130.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #f44336#f44336;" text="Назад" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="C">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="celsiusTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Градус Цельсия" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="F">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fahrenheitTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Градусы по Фаренгейту" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="K">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="kelvinTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Кельвин" textFill="#656262" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
