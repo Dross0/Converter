@@ -32,32 +32,39 @@ public class TimeController extends UnitController {
     @FXML
     private TextField nanosecondTextField;
 
-    private HashMap<TextField, TimeUnit> unitsTable;
+    private HashMap<TextField, TimeUnit> unitsTable = new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(nanosecondTextField, TimeUnit.NANOSECOND);
-            unitsTable.put(microsecondTextField, TimeUnit.MICROSECOND);
-            unitsTable.put(millisecondTextField, TimeUnit.MILLISECOND);
-            unitsTable.put(secondTextField, TimeUnit.SECOND);
-            unitsTable.put(minuteTextField, TimeUnit.MINUTE);
-            unitsTable.put(hourTextField, TimeUnit.HOUR);
-            unitsTable.put(dayTextField, TimeUnit.DAY);
-            unitsTable.put(weekTextField, TimeUnit.WEEK);
-            unitsTable.put(monthTextField, TimeUnit.MONTH);
-            unitsTable.put(yearTextField, TimeUnit.YEAR);
+    @FXML
+    public void initialize(){
+        unitsTable.put(nanosecondTextField, TimeUnit.NANOSECOND);
+        unitsTable.put(microsecondTextField, TimeUnit.MICROSECOND);
+        unitsTable.put(millisecondTextField, TimeUnit.MILLISECOND);
+        unitsTable.put(secondTextField, TimeUnit.SECOND);
+        unitsTable.put(minuteTextField, TimeUnit.MINUTE);
+        unitsTable.put(hourTextField, TimeUnit.HOUR);
+        unitsTable.put(dayTextField, TimeUnit.DAY);
+        unitsTable.put(weekTextField, TimeUnit.WEEK);
+        unitsTable.put(monthTextField, TimeUnit.MONTH);
+        unitsTable.put(yearTextField, TimeUnit.YEAR);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
-
     @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         TimeUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, TimeUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(TimeConverter.convert(value, fromUnit, entry.getValue())));

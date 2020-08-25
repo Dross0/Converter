@@ -109,6 +109,15 @@
                   </Button>
                </children>
             </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="610.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0">
+               <children>
+                  <Button fx:id="currencyButton" layoutX="141.0" layoutY="17.0" mnemonicParsing="false" onAction="#showConverter" onMouseMoved="#switchColor" prefHeight="60.0" style="-fx-background-color: white;" text="Валюта" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Verdana" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </content>

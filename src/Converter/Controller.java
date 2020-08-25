@@ -19,6 +19,8 @@ import java.util.HashMap;
 
 public class Controller {
     @FXML
+    private Button currencyButton;
+    @FXML
     private Button angleButton;
     @FXML
     private Button volumeButton;
@@ -58,6 +60,7 @@ public class Controller {
             referenceToConverterView.put(squareButton, Controller.class.getResource("units/square/square.fxml"));
             referenceToConverterView.put(volumeButton, Controller.class.getResource("units/volume/volume.fxml"));
             referenceToConverterView.put(angleButton, Controller.class.getResource("units/angle/angle.fxml"));
+            referenceToConverterView.put(currencyButton, Controller.class.getResource("units/currency/currency.fxml"));
         }
     }
 

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" pannable="true" prefHeight="600.0" prefWidth="400.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Converter.units.currency.CurrencyController">
+   <content>
+      <VBox>
+         <children>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Button fx:id="backButton" layoutX="130.0" layoutY="33.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: #f44336#f44336;" text="Назад" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3510.0" maxHeight="100.0" minWidth="384.0" prefHeight="38.0" prefWidth="384.0">
+               <children>
+                  <Label fx:id="lastUpdateDateLabel" layoutX="171.0" layoutY="11.0" textAlignment="CENTER" textFill="#4a4a4a" />
+                  <Label layoutX="92.0" layoutY="11.0" text="Обновлено:" textFill="#4a4a4a" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="RUB">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="RUBTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Российский рубль" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="USD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="USDTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Доллар США" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="EUR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EURTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Евро" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="210.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="KZT">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="KZTTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Казахстанских тенге" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="310.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="UAH">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="UAHTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Украинская гривна" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="510.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="BYN">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="BYNTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+                  <Label layoutX="61.0" layoutY="69.0" text="Белорусский рубль" textFill="#656262" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="410.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="AUD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Австралийский доллар" textFill="#656262" />
+                  <TextField fx:id="AUDTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="610.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="AZN">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Азербайджанский манат" textFill="#656262" />
+                  <TextField fx:id="AZNTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="710.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="AMD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Армянский драм" textFill="#656262" />
+                  <TextField fx:id="AMDTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1010.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="GBP">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Фунт стерлингов Соединенного королевства" textFill="#656262" />
+                  <TextField fx:id="GBPTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="BGN">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Болгарский лев" textFill="#656262" />
+                  <TextField fx:id="BGNTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1210.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="BRL">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Бразильский реал" textFill="#656262" />
+                  <TextField fx:id="BRLTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1310.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="HUF">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Венгерский форинт" textFill="#656262" />
+                  <TextField fx:id="HUFTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1410.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="HKD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Гонконгский доллар" textFill="#656262" />
+                  <TextField fx:id="HKDTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1410.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="DKK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Датская крона" textFill="#656262" />
+                  <TextField fx:id="DKKTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1510.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="INR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Индийский рупий" textFill="#656262" />
+                  <TextField fx:id="INRTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1610.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="CAD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Канадский доллар" textFill="#656262" />
+                  <TextField fx:id="CADTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1710.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="KGS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Киргизский сом" textFill="#656262" />
+                  <TextField fx:id="KGSTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1810.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="CNY">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Китайский юань" textFill="#656262" />
+                  <TextField fx:id="CNYTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="1910.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="MDL">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Молдавский лей" textFill="#656262" />
+                  <TextField fx:id="MDLTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2010.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="NOK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Норвежская крона" textFill="#656262" />
+                  <TextField fx:id="NOKTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="PLN">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Польский злотый" textFill="#656262" />
+                  <TextField fx:id="PLNTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2210.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="RON">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Румынский лей" textFill="#656262" />
+                  <TextField fx:id="RONTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2310.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="XDR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="СДР (специальные права заимствования)" textFill="#656262" />
+                  <TextField fx:id="XDRTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2410.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="SGD">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Сингапурский доллар" textFill="#656262" />
+                  <TextField fx:id="SGDTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2510.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="TJS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Таджикский сомони" textFill="#656262" />
+                  <TextField fx:id="TJSTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2610.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="TRY">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Турецкая лира" textFill="#656262" />
+                  <TextField fx:id="TRYTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2710.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="TMT">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Новый туркменский манат" textFill="#656262" />
+                  <TextField fx:id="TMTTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2810.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="UZS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Узбекский сум" textFill="#656262" />
+                  <TextField fx:id="UZSTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="2910.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="CZK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Чешская крона" textFill="#656262" />
+                  <TextField fx:id="CZKTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3010.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="SEK">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Шведская крона" textFill="#656262" />
+                  <TextField fx:id="SEKTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3110.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="CHF">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Швейцарский франк" textFill="#656262" />
+                  <TextField fx:id="CHFTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3210.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="ZAR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Южноафрикански рэнд" textFill="#656262" />
+                  <TextField fx:id="ZARTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3310.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="KRW">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Вон Республики Корея" textFill="#656262" />
+                  <TextField fx:id="KRWTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="3410.0" maxHeight="100.0" minWidth="384.0" prefHeight="100.0" prefWidth="384.0">
+               <children>
+                  <Label layoutX="61.0" layoutY="30.0" text="JPY">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="61.0" layoutY="69.0" text="Японская иена" textFill="#656262" />
+                  <TextField fx:id="JPYTextField" layoutX="140.0" layoutY="28.0" onKeyPressed="#enter" onKeyReleased="#enter" onKeyTyped="#enter" prefHeight="27.0" prefWidth="211.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

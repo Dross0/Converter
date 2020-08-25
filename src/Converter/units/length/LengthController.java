@@ -34,33 +34,41 @@ public class LengthController extends UnitController {
     private TextField kilometerTextField;
 
 
-    private HashMap<TextField, LengthUnit> unitsTable;
+    private HashMap<TextField, LengthUnit> unitsTable = new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(meterTextField, LengthUnit.METER);
-            unitsTable.put(centimeterTextField, LengthUnit.CENTIMETER);
-            unitsTable.put(decimeterTextField, LengthUnit.DECIMETER);
-            unitsTable.put(kilometerTextField, LengthUnit.KILOMETER);
-            unitsTable.put(millimeterTextField, LengthUnit.MILLIMETER);
-            unitsTable.put(fathomTextField, LengthUnit.FATHOM_USA);
-            unitsTable.put(nauticalMileTextField, LengthUnit.NAUTICAL_MILE);
-            unitsTable.put(inchTextField, LengthUnit.INCH);
-            unitsTable.put(yardTextField, LengthUnit.YARD);
-            unitsTable.put(mileTextField, LengthUnit.MILE);
-            unitsTable.put(footTextField, LengthUnit.FOOT);
+    @FXML
+    public void initialize(){
+        unitsTable.put(meterTextField, LengthUnit.METER);
+        unitsTable.put(centimeterTextField, LengthUnit.CENTIMETER);
+        unitsTable.put(decimeterTextField, LengthUnit.DECIMETER);
+        unitsTable.put(kilometerTextField, LengthUnit.KILOMETER);
+        unitsTable.put(millimeterTextField, LengthUnit.MILLIMETER);
+        unitsTable.put(fathomTextField, LengthUnit.FATHOM_USA);
+        unitsTable.put(nauticalMileTextField, LengthUnit.NAUTICAL_MILE);
+        unitsTable.put(inchTextField, LengthUnit.INCH);
+        unitsTable.put(yardTextField, LengthUnit.YARD);
+        unitsTable.put(mileTextField, LengthUnit.MILE);
+        unitsTable.put(footTextField, LengthUnit.FOOT);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
 
     @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         LengthUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, LengthUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(LengthConverter.convert(value, fromUnit, entry.getValue())));

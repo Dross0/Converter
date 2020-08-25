@@ -38,35 +38,43 @@ public class SquareController extends UnitController {
     @FXML
     private TextField squareMicrometerTextField;
 
-    private HashMap<TextField, SquareUnit> unitsTable;
+    private HashMap<TextField, SquareUnit> unitsTable = new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(squareMillimeterTextField, SquareUnit.SQUARE_MILLIMETER);
-            unitsTable.put(squareCentimeterTextField, SquareUnit.SQUARE_CENTIMETER);
-            unitsTable.put(squareDecimeterTextField, SquareUnit.SQUARE_DECIMETER);
-            unitsTable.put(squareMeterTextField, SquareUnit.SQUARE_METER);
-            unitsTable.put(squareKilometerTextField, SquareUnit.SQUARE_KILOMETER);
-            unitsTable.put(squareInchTextField, SquareUnit.SQUARE_INCH);
-            unitsTable.put(squareYardTextField, SquareUnit.SQUARE_YARD);
-            unitsTable.put(squareFootTextField, SquareUnit.SQUARE_FOOT);
-            unitsTable.put(squareMileTextField, SquareUnit.SQUARE_MILE);
-            unitsTable.put(acreTextField, SquareUnit.ACRE);
-            unitsTable.put(areTextField, SquareUnit.ARE);
-            unitsTable.put(hectareTextField, SquareUnit.HECTARE);
-            unitsTable.put(squareMicrometerTextField, SquareUnit.SQUARE_MICROMETER);
+    @FXML
+    public void initialize(){
+        unitsTable.put(squareMillimeterTextField, SquareUnit.SQUARE_MILLIMETER);
+        unitsTable.put(squareCentimeterTextField, SquareUnit.SQUARE_CENTIMETER);
+        unitsTable.put(squareDecimeterTextField, SquareUnit.SQUARE_DECIMETER);
+        unitsTable.put(squareMeterTextField, SquareUnit.SQUARE_METER);
+        unitsTable.put(squareKilometerTextField, SquareUnit.SQUARE_KILOMETER);
+        unitsTable.put(squareInchTextField, SquareUnit.SQUARE_INCH);
+        unitsTable.put(squareYardTextField, SquareUnit.SQUARE_YARD);
+        unitsTable.put(squareFootTextField, SquareUnit.SQUARE_FOOT);
+        unitsTable.put(squareMileTextField, SquareUnit.SQUARE_MILE);
+        unitsTable.put(acreTextField, SquareUnit.ACRE);
+        unitsTable.put(areTextField, SquareUnit.ARE);
+        unitsTable.put(hectareTextField, SquareUnit.HECTARE);
+        unitsTable.put(squareMicrometerTextField, SquareUnit.SQUARE_MICROMETER);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
 
     @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         SquareUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, SquareUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(SquareConverter.convert(value, fromUnit, entry.getValue())));

@@ -25,29 +25,36 @@ public class PowerController extends UnitController {
     @FXML
     private TextField btuPerSecTextField;
 
-    private HashMap<TextField, PowerUnit> unitsTable;
+    private HashMap<TextField, PowerUnit> unitsTable = new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(horsePowerTextField, PowerUnit.HORSE_POWER);
-            unitsTable.put(wattTextField, PowerUnit.WATT);
-            unitsTable.put(kilowattTextField, PowerUnit.KILOWATT);
-            unitsTable.put(kilocalPerSecTextField, PowerUnit.KILOCAL);
-            unitsTable.put(calPerSecTextField, PowerUnit.CAL);
-            unitsTable.put(btuPerHrTextField, PowerUnit.BTU_PER_HOUR);
-            unitsTable.put(btuPerSecTextField, PowerUnit.BTU_PER_SECOND);
+    @FXML
+    public void initialize(){
+        unitsTable.put(horsePowerTextField, PowerUnit.HORSE_POWER);
+        unitsTable.put(wattTextField, PowerUnit.WATT);
+        unitsTable.put(kilowattTextField, PowerUnit.KILOWATT);
+        unitsTable.put(kilocalPerSecTextField, PowerUnit.KILOCAL);
+        unitsTable.put(calPerSecTextField, PowerUnit.CAL);
+        unitsTable.put(btuPerHrTextField, PowerUnit.BTU_PER_HOUR);
+        unitsTable.put(btuPerSecTextField, PowerUnit.BTU_PER_SECOND);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
-
     @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         PowerUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, PowerUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(PowerConverter.convert(value, fromUnit, entry.getValue())));

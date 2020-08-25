@@ -15,6 +15,4 @@ public abstract class UnitController {
     }
 
     public abstract void enter(Event event);
-
-    public abstract void init();
 }

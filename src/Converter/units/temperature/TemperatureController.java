@@ -20,28 +20,45 @@ public class TemperatureController extends UnitController {
     private TextField kelvinTextField;
 
 
-    private HashMap<TextField, TemperatureUnit> unitsTable;
+    private HashMap<TextField, TemperatureUnit> unitsTable = new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(celsiusTextField, TemperatureUnit.CELSIUS);
-            unitsTable.put(fahrenheitTextField, TemperatureUnit.FAHRENHEIT);
-            unitsTable.put(kelvinTextField, TemperatureUnit.KELVIN);
+    @FXML
+    public void initialize(){
+        unitsTable.put(celsiusTextField, TemperatureUnit.CELSIUS);
+        unitsTable.put(fahrenheitTextField, TemperatureUnit.FAHRENHEIT);
+        unitsTable.put(kelvinTextField, TemperatureUnit.KELVIN);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
-
     @FXML
      public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         TemperatureUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
-        for (Map.Entry<TextField, TemperatureUnit> entry: unitsTable.entrySet()){
-            if (entry.getKey() != currentTextField){
-                entry.getKey().setText(Double.toString(TemperatureConverter.convert(value, fromUnit, entry.getValue())));
+        double value = 0;
+        boolean isNumberFormatException = false;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ex){
+            for (Map.Entry<TextField, TemperatureUnit> entry: unitsTable.entrySet()) {
+                if (entry.getKey() != currentTextField) {
+                    entry.getKey().setText("0.0");
+                }
+            }
+            isNumberFormatException = true;
+        }
+        if (!isNumberFormatException) {
+            for (Map.Entry<TextField, TemperatureUnit> entry : unitsTable.entrySet()) {
+                if (entry.getKey() != currentTextField) {
+                    entry.getKey().setText(Double.toString(TemperatureConverter.convert(value, fromUnit, entry.getValue())));
+                }
             }
         }
     }

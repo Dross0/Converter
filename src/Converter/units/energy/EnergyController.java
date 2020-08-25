@@ -27,29 +27,36 @@ public class EnergyController extends UnitController {
     private TextField btuTextField;
 
 
-    private HashMap<TextField, EnergyUnit> unitsTable;
+    private HashMap<TextField, EnergyUnit> unitsTable =  new HashMap<>();
 
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(caloriesTextField, EnergyUnit.CALORIES);
-            unitsTable.put(kilocaloriesTextField, EnergyUnit.KILOCALORIES);
-            unitsTable.put(jouleTextField, EnergyUnit.JOULE);
-            unitsTable.put(kilojouleTextField, EnergyUnit.KILOJOULE);
-            unitsTable.put(kilowattPerHourTextField, EnergyUnit.KILOWATT_PER_HOUR);
-            unitsTable.put(ergTextField, EnergyUnit.ERG);
-            unitsTable.put(btuTextField, EnergyUnit.BTU);
+    @FXML
+    public void initialize(){
+        unitsTable.put(caloriesTextField, EnergyUnit.CALORIES);
+        unitsTable.put(kilocaloriesTextField, EnergyUnit.KILOCALORIES);
+        unitsTable.put(jouleTextField, EnergyUnit.JOULE);
+        unitsTable.put(kilojouleTextField, EnergyUnit.KILOJOULE);
+        unitsTable.put(kilowattPerHourTextField, EnergyUnit.KILOWATT_PER_HOUR);
+        unitsTable.put(ergTextField, EnergyUnit.ERG);
+        unitsTable.put(btuTextField, EnergyUnit.BTU);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
         }
     }
 
-
     @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         EnergyUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, EnergyUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(EnergyConverter.convert(value, fromUnit, entry.getValue())));

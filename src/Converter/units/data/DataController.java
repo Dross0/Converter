@@ -31,32 +31,39 @@ public class DataController extends UnitController {
     @FXML
     private TextField terabyteTextField;
 
-    private HashMap<TextField, DataUnit> unitsTable;
-    
-
-    public void init(){
-        if (unitsTable == null) {
-            unitsTable = new HashMap<>();
-            unitsTable.put(bitTextField, DataUnit.BIT);
-            unitsTable.put(kilobitTextField, DataUnit.KILOBIT);
-            unitsTable.put(megabitTextField, DataUnit.MEGABIT);
-            unitsTable.put(gigabitTextField, DataUnit.GIGABIT);
-            unitsTable.put(byteTextField, DataUnit.BYTE);
-            unitsTable.put(kilobyteTextField, DataUnit.KILOBYTE);
-            unitsTable.put(megabyteTextField, DataUnit.MEGABYTE);
-            unitsTable.put(gigabyteTextField, DataUnit.GIGABYTE);
-            unitsTable.put(terabyteTextField, DataUnit.TERABYTE);
-        }
-    }
+    private HashMap<TextField, DataUnit> unitsTable = new HashMap<>();
 
 
     @FXML
+    public void initialize(){
+        unitsTable.put(bitTextField, DataUnit.BIT);
+        unitsTable.put(kilobitTextField, DataUnit.KILOBIT);
+        unitsTable.put(megabitTextField, DataUnit.MEGABIT);
+        unitsTable.put(gigabitTextField, DataUnit.GIGABIT);
+        unitsTable.put(byteTextField, DataUnit.BYTE);
+        unitsTable.put(kilobyteTextField, DataUnit.KILOBYTE);
+        unitsTable.put(megabyteTextField, DataUnit.MEGABYTE);
+        unitsTable.put(gigabyteTextField, DataUnit.GIGABYTE);
+        unitsTable.put(terabyteTextField, DataUnit.TERABYTE);
+        fillDefaultTextFields();
+    }
+
+    private void fillDefaultTextFields(){
+        for (TextField textField: unitsTable.keySet()){
+            textField.setText("0.0");
+        }
+    }
+
+    @FXML
     public void enter(Event event){
-        init();
         EventTarget eventTarget = event.getTarget();
         TextField currentTextField = (TextField) eventTarget;
         DataUnit fromUnit = unitsTable.get(currentTextField);
-        double value = Double.parseDouble(currentTextField.getText());
+        double value = 0;
+        try {
+            value = Double.parseDouble(currentTextField.getText());
+        }
+        catch (NumberFormatException ignored){}
         for (Map.Entry<TextField, DataUnit> entry: unitsTable.entrySet()){
             if (entry.getKey() != currentTextField){
                 entry.getKey().setText(Double.toString(DataConverter.convert(value, fromUnit, entry.getValue())));
